@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+</head>
+
+<body>
+
+    {%if flag_is_logged_in == True %}
+        <h1>Seja Bem-vindo de volta</h1>
+    {% else %}
+        <h1>Faça login para continuar</h1>
+
+
+
+    <h2>Olá, {{usuario}}!</h2>
+
+    {%if role == "admin" %}
+        <h3>Você é admin</h3>
+    {% else %}
+        <h3>Você é um user comum</h3>
+
+    {%if idade >= 18 %}
+        <p>Maior de idade</p>
+    {% else %}
+         <p>Menor de idade</p>
+
+    <p>Seu número multiplicado por 2: {{ numero|add:numero}}</p>
+    <p>Data atual: {% now "d-m-Y" %}</p>
+
+    <a href="{% url 'página_home' %}">Ir para a home</a>
+    <a href="{% url 'página_de_contato' %}">Ir para a contatos</a>
+</body>
+
+</html>
